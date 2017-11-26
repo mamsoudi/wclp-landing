@@ -1,0 +1,88 @@
+if base_path && base_path == ""
+  - base_path = "./"
+else if base_path
+  - base_path = base_path
+else 
+  - var base_path = "./"
+  
+if page_description
+  meta(name="description", content=`${page_description}`)
+  meta(property="og:description", content=`${ page_description }`)
+  meta(name="twitter:description", content=`${ page_description }`)
+  meta(itemprop="description", content=`${ page_description }`)
+
+else
+  meta(name="description", content=`${description}`)
+  meta(property="og:description", content=`${ description }`)
+  meta(name="twitter:description", content=`${ description }`)
+  meta(itemprop="description", content=`${ description }`)
+
+  
+meta(name="author", content=`${author}`)
+meta(name="keywords", content=`${ page_keywords }${ keywords }`)
+meta(name="Robots", content="index, follow")
+meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+meta(name="viewport", content="width=device-width, initial-scale=1")
+meta(name="msapplication-tap-highlight", content="no")
+link(rel="shortcut icon", href=`${ base_path }${favicon}`, type="image/x-icon")
+link(rel="sitemap", type="application/xml", title="Sitemap", href="sitemap.xml")
+link(rel="manifest", href=`${ base_path }manifest.json`)
+  
+if page_title
+  meta(property="og:title", content=`${ page_title }`)
+  meta(name="application-name", content=`${ page_title }`)
+  meta(name="apple-mobile-web-app-title", content=`${ page_title }`)
+  meta(property="og:title", content=`${ page_title }`)
+  meta(name="twitter:title", content=`${ page_title }`)
+  meta(itemprop="name", content=`${ page_title }`)
+
+
+else 
+  meta(property="og:title", content=`${ title }`)
+  meta(name="application-name", content=`${ title }`)
+  meta(name="apple-mobile-web-app-title", content=`${ title }`)
+  meta(property="og:title", content=`${ title }`)
+  meta(name="twitter:title", content=`${ title }`)
+  meta(itemprop="name", content=`${ title }`)
+  
+  
+meta(property="og:type", content="website")
+meta(property="og:url", content=`${url}`)
+
+if page_image
+  meta(property="og:image", content=`${ base_path }${ page_image }`)
+  meta(name="msapplication-TileImage", content=`${ base_path }${ page_image }`)
+  meta(property="og:image", content=`${ base_path }${ page_image }`)
+  meta(name="twitter:image", content=`${ base_path }${ page_image }`)
+  meta(itemprop="image", content=`${ base_path }${ page_image }`)
+
+else
+  meta(property="og:image", content=`${ base_path }${ image }`)
+  meta(name="msapplication-TileImage", content=`${ base_path }${ image }`)
+  meta(property="og:image", content=`${ base_path }${ image }`)
+  meta(name="twitter:image", content=`${ base_path }${ image }`)
+  meta(itemprop="image", content=`${ base_path }${ image }`)
+
+// Color the status bar on mobile devices
+meta(name="theme-color", content=`${theme}`)
+
+// Add to homescreen for Chrome on Android
+meta(name="mobile-web-app-capable", content="yes")
+link(rel="icon", sizes="192x192", href=`${ base_path }${favicon}`)
+  
+// Add to homescreen for Safari on iOS
+meta(name="apple-mobile-web-app-capable", content="yes")
+meta(name="apple-mobile-web-app-status-bar-style", content="black")
+link(rel="apple-touch-icon", href=`${ base_path }${favicon}`)
+  
+// Tile icon for Win8 (144x144 + tile color)
+meta(name="msapplication-TileColor", content=`${theme}`)
+  
+// Facebook page specifics
+meta(property="og:site_name", content=`${title}`)
+meta(property="og:type", content="website")
+  
+// Twitter page specifics
+meta(name="twitter:card", content="summary")
+meta(name="twitter:url", content=`${url}`)
+meta(name="twitter:site", content=`${twitter}`)

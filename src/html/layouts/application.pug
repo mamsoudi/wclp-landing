@@ -1,0 +1,21 @@
+doctype html
+html(lang="fa")
+  head
+    meta(charset="utf-8")
+    if page_title
+      title= page_title
+    else
+      title= title
+
+    include ../shared/meta-tags.pug
+    include ../shared/app-icons.pug
+    include ../shared/css.pug
+    
+    link(rel="stylesheets", href=`${base_path}stylesheets/app.css`)
+      
+  body
+    include ../shared/header.pug
+    block content
+    include ../shared/footer.pug
+    include ../shared/javascript.pug
+    script(src=`${base_path}javascripts/app.js`)
